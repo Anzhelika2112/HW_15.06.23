@@ -1,12 +1,34 @@
 ﻿Console.Clear();
 Console.Write("Введите число: ");
 string userInput = Console.ReadLine() ?? "";
-int num = int.Parse(userInput);
-if (num >= 6 && num <= 7);
+int number = int.Parse(userInput);
+
+bool IsWeekend(int weekday)
+{
+    if(number > 5)
     {
-        Console.WriteLine($" {num} -> да, это выходной день");
+        return true;
     }
-if (num >= 1 && num <= 5)
+    return false;
+}
+bool ValidateWeekday(int number)
+{
+    if (number > 0 && number <= 7)
     {
-        Console.WriteLine($" {num} -> нет, это будний день");
+        return true;
     }
+    Console.WriteLine("Это не день недели");
+    return false;
+}
+
+if(ValidateWeekday(number))
+{
+    if(IsWeekend(number))
+    {
+    Console.WriteLine("Это выходной день");
+    }
+else
+{
+    Console.WriteLine("Это будний день");
+}
+}
